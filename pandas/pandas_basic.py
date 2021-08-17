@@ -164,3 +164,23 @@ print(df1.dropna(thresh=3))
 
 print("Original dataframe")
 print(df1)
+
+print(df1.fillna('M'))
+df2 = pd.DataFrame(np.arange(0,9).reshape(3,3),index=['A','B','C'],columns=['A','B','C'])
+print("The dataframe")
+print(df2)
+
+print(df2.sum(axis=0))
+
+print(df2.sum(axis=1))
+
+print("The dataframe")
+print(df2)
+
+print(df2.min(axis=0))
+
+print(df2.min(axis=1))
+
+print("The dataframe")
+df3=pd.DataFrame(np.arange(0,9).reshape(3,3),index=['A','B','C'],columns=['Col1','Col2','Col3'])
+print(df3)
