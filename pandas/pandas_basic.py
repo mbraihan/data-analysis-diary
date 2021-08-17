@@ -184,3 +184,27 @@ print(df2.min(axis=1))
 print("The dataframe")
 df3=pd.DataFrame(np.arange(0,9).reshape(3,3),index=['A','B','C'],columns=['Col1','Col2','Col3'])
 print(df3)
+
+print(df3.idxmin(axis=0))
+print(df3.idxmin(axis=1))
+
+
+srs2=pd.Series(np.arange(5),index=[['A','A','B','C','C'],[1,2,3,4,5]])
+print(srs2)
+
+print("The A index") #Fetching elements at A index
+print(srs2['A'])
+
+print("The B index")
+print(srs2['B'])
+
+print(srs2['B'][3])
+
+df4=pd.DataFrame(np.arange(25).reshape(5,5),index=[['A','A','A','B','B'],[1,2,3,4,5]],columns=[['USA','Ban','Can','UK','Aus'],['Day','Day','Night','Night','Night']])
+print("Multilevel index in dataframe")
+print(df4)
+
+print(df4['USA'])
+print(df4['Ban']['Day'])
+print(df4['Ban']['Day']['A'])
+print(df4['USA']['Day']['A'][3])
