@@ -73,11 +73,11 @@ print(df.iloc[1:,:3].values)
 
 print(type(df.iloc[1:,:3].values))
 
-df.iloc[1:,:3].values.shape
-df.isnull()
-df.isnull().sum()
-df['Col1'].value_counts()
-df['Col1'].unique()
+print(df.iloc[1:,:3].values.shape)
+print(df.isnull())
+print(df.isnull().sum())
+print(df['Col1'].value_counts())
+print(df['Col1'].unique())
 
 
 Data='{"name":"John", "email":"john@email.com", "job":[{"Title1":"Programmer", "Title2":"Engineer"}]}'
@@ -101,3 +101,66 @@ dframe2=dframe2.reindex(columns=['Col1','Col2','Col3','Col4'])
 print(dframe2)
 
 print(dframe2.ffill(axis=1))
+
+print(dframe1['Col3'])
+
+print(dframe1[dframe1['Col3']>5])
+print(dframe1.drop('Row5'))
+print(dframe1.drop('Col2',axis=1))
+
+print("Sorting numeric index")
+num_series = pd.Series([1,4,5,8,3],index=[3,1,2,4,5])
+print(num_series.sort_index())
+
+print("Sorting alphabetic index")
+alpha_series = pd.Series([1,4,5,8,3],index=['C','B','D','A','E'])
+print(alpha_series.sort_index())
+
+print("Sorting alphanumeric index")
+alphanum_series = pd.Series([1,4,5,8,3],index=['1','5','A','C','B'])
+print(alphanum_series.sort_index())
+
+print("Sorting numeric values")
+num_series1 = pd.Series(np.random.randn(5))
+print(num_series1.sort_values())
+
+print("Sorting alphabetic values")
+alpha_series1 = pd.Series(['E','X','S','A','M'])
+print(alpha_series1.sort_values())
+
+srs1 = pd.Series(np.random.randn(5))
+print("Series before ranking\n",srs1)
+
+print("Rank before sorting")
+print(srs1.rank())
+
+srs1 = srs1.sort_values()
+
+print("Rank after sorting\n")
+print(srs1.rank())
+
+null_val = np.nan
+srs = pd.Series(['A','B','C',null_val]) #Declaring series with null values
+print("The series with null values\n",srs)
+print(srs.isnull())
+
+
+df = pd.DataFrame([['A','B','c',null_val],[null_val,1,5,3],['D',null_val,'F','G']])
+print("Dataframe with NaN values")
+print(df)
+print(df.isnull())
+
+df1=pd.DataFrame([[1,2,3,4,5],[6,null_val,7,null_val,9],[null_val,'D','C',null_val,'E'],[null_val,null_val,null_val,null_val,null_val]])
+print("Original dataframe")
+print(df1)
+
+print(df1.dropna())
+
+print(df1.dropna(how='all'))
+
+print(df1.dropna(axis=1))
+
+print(df1.dropna(thresh=3))
+
+print("Original dataframe")
+print(df1)
