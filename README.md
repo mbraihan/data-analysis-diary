@@ -1,1 +1,1 @@
-# pandas-journey
+# Data Analysis diary
