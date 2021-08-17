@@ -32,3 +32,16 @@ result.name = "Result"
 result.index.name = 'Country'
 
 print(result)
+
+print(pd.isnull(result))
+
+print(pd.notnull(result))
+
+print(result[result == 1.0]) #print indexes that satisfy the condition
+
+print(result[result != 1.0])
+
+# Dataframe
+
+df=pd.DataFrame(np.arange(0,12).reshape(4,3),index=['Row1','Row2','Row3','Row4'],columns=['Col1','Col2','Col3'])
+df.head()
