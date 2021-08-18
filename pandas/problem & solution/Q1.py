@@ -2,10 +2,10 @@ import pandas as pd
 from pandas import read_excel
 import numpy as np
 
-df = pd.read_excel('mahim.xlsx')
+df = pd.read_excel('/run/media/n30/Jarvis/work/learn/data-analysis-diary/pandas/problem & solution/chunk.xlsx')
 
-df_gender = pd.read_excel('mahim.xlsx', 'Dataset-student')
-df_math = pd.read_excel('mahim.xlsx', 'Dataset-student-math')
+df_gender = pd.read_excel('/run/media/n30/Jarvis/work/learn/data-analysis-diary/pandas/problem & solution/chunk.xlsx', 'Dataset-student')
+df_math = pd.read_excel('/run/media/n30/Jarvis/work/learn/data-analysis-diary/pandas/problem & solution/chunk.xlsx', 'Dataset-student-math')
 
 
 
